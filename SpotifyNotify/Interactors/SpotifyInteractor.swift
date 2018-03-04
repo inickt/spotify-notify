@@ -9,14 +9,14 @@
 import AppKit
 import ScriptingBridge
 
-final class SpotifyInteractor {    
+final class SpotifyInteractor: MusicInteractorType {    
 	private let spotify: SpotifyApplication? = SBApplication(bundleIdentifier: SpotifyConstants.bundleIdentifier)
 	
 	var isFrontmost: Bool { return spotify?.frontmost ?? false }
 	
 	var currentTrack: Track? { return spotify?.currentTrack?.track }
 	var soundVolume: Int? { return spotify?.soundVolume }
-	var playerState: SpotifyEPlS? { return spotify?.playerState }
+	var playerState: PlayingState? { return spotify?.playerState?.playingState }
 	var playerPosition: Double? { return spotify?.playerPosition }
 	
 	func nextTrack() {
@@ -38,4 +38,14 @@ final class SpotifyInteractor {
 	func pause() {
 		spotify?.pause?()
 	}
+}
+
+extension SpotifyEPlS {
+    var playingState: PlayingState {
+        switch self {
+        case .stopped: return .stopped
+        case .playing: return .playing
+        case .paused: return .paused
+        }
+    }
 }

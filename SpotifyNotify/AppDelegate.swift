@@ -27,9 +27,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var statusQuit: NSMenuItem!
 	
 	fileprivate var preferences = UserPreferences()
-	fileprivate let notificationsInteractor = NotificationsInteractor()
 	fileprivate let shortcutsInteractor = ShortcutsInteractor()
 	fileprivate let spotifyInteractor = SpotifyInteractor()
+    fileprivate let itunesInteractor = iTunesInteractor()
+    
+    fileprivate lazy var notificationsInteractor = NotificationsInteractor(interactor: itunesInteractor)
 	
 	var statusBar: NSStatusItem!
 	
@@ -63,6 +65,9 @@ extension AppDelegate {
 		center.addObserver(self, selector: #selector(playbackStateChanged),
 						   name: NSNotification.Name(rawValue: SpotifyConstants.notificationPlaybackChange),
 						   object: nil, suspensionBehavior: .deliverImmediately)
+        center.addObserver(self, selector: #selector(playbackStateChanged),
+                           name: NSNotification.Name(rawValue: iTunesConstants.notificationPlaybackChange),
+                           object: nil, suspensionBehavior: .deliverImmediately)
 		
 		center.addObserver(self, selector: #selector(setupStartup),
 						   name: .userPreferencesDidChangeStartup, object: nil)

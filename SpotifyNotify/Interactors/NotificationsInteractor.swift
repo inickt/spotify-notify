@@ -11,10 +11,14 @@ import ScriptingBridge
 final class NotificationsInteractor {
 	
 	private let preferences = UserPreferences()
-	private let spotifyInteractor = SpotifyInteractor()
+    private let musicInteractor: MusicInteractorType
 	
 	private var previousTrack: Track?
 	private var currentTrack: Track?
+    
+    init(interactor: MusicInteractorType) {
+        self.musicInteractor = interactor
+    }
     
     func showNotification() {
         
@@ -22,17 +26,17 @@ final class NotificationsInteractor {
 		guard preferences.notificationsEnabled else { return }
 		
 		// return if notifications are disabled when in focus
-		if spotifyInteractor.isFrontmost && preferences.notificationsDisableOnFocus { return }
+		if musicInteractor.isFrontmost && preferences.notificationsDisableOnFocus { return }
 		
 		previousTrack = currentTrack
-		currentTrack  = spotifyInteractor.currentTrack
+		currentTrack  = musicInteractor.currentTrack
 	
 		// return if previous track is same as previous => play/pause and if it's disabled
 		guard currentTrack != previousTrack || preferences.notificationsPlayPause else {
 			return
 		}
 		
-		guard spotifyInteractor.playerState == .some(.playing) else {
+		guard musicInteractor.playerState == .some(.playing) else {
 			return
 		}
         
@@ -91,12 +95,12 @@ final class NotificationsInteractor {
 	}
 	
 	func handleAction() {
-        spotifyInteractor.nextTrack()
+        musicInteractor.nextTrack()
 	}
     
     private func progress(for track: Track?) -> String {
         guard
-            let position = spotifyInteractor.playerPosition,
+            let position = musicInteractor.playerPosition,
             let duration = track?.duration else {
                 return "00:00/00:00"
         }

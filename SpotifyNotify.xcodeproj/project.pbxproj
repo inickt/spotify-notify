@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1D2FCF204C1D7F00FD0F60 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D2FCE204C1D7F00FD0F60 /* iTunes.swift */; };
+		4C1D2FD1204C1D8A00FD0F60 /* iTunesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D2FD0204C1D8A00FD0F60 /* iTunesInteractor.swift */; };
+		4C1D2FD3204C1F2200FD0F60 /* MusicInteractorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D2FD2204C1F2200FD0F60 /* MusicInteractorType.swift */; };
 		4C2FABAA204C112600354C1B /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2FABA9204C112600354C1B /* LaunchAtLogin.framework */; };
 		4C2FABAB204C112600354C1B /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2FABA9204C112600354C1B /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C5764C71C982DC800364AFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5764C61C982DC800364AFE /* AppDelegate.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C1D2FCE204C1D7F00FD0F60 /* iTunes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunes.swift; sourceTree = "<group>"; };
+		4C1D2FD0204C1D8A00FD0F60 /* iTunesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesInteractor.swift; sourceTree = "<group>"; };
+		4C1D2FD2204C1F2200FD0F60 /* MusicInteractorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInteractorType.swift; sourceTree = "<group>"; };
 		4C2FABA9204C112600354C1B /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		4C5764C31C982DC800364AFE /* Notify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5764C61C982DC800364AFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				FBCCA5FD203EE057008AD1BF /* Constants.swift */,
+				4C1D2FCE204C1D7F00FD0F60 /* iTunes.swift */,
 				4C858884203F218800ED1692 /* Spotify.swift */,
 				FBCCA5FF203EE195008AD1BF /* Extensions.swift */,
 			);
@@ -157,7 +164,9 @@
 			children = (
 				FBCCA5FA203ED78B008AD1BF /* NotificationsInteractor.swift */,
 				FBF18DE820442BB000FAD80A /* ShortcutsInterector.swift */,
+				4C1D2FD2204C1F2200FD0F60 /* MusicInteractorType.swift */,
 				FBEF395220455FCC0039536B /* SpotifyInteractor.swift */,
+				4C1D2FD0204C1D8A00FD0F60 /* iTunesInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -286,13 +295,16 @@
 			files = (
 				FB6B9D0A203EC22D0062702B /* UserPreferences.swift in Sources */,
 				FBCCA600203EE195008AD1BF /* Extensions.swift in Sources */,
+				4C1D2FD3204C1F2200FD0F60 /* MusicInteractorType.swift in Sources */,
 				FB0A9A4E203EC9BA00721E3A /* PreferencesView.swift in Sources */,
 				4C858885203F218800ED1692 /* Spotify.swift in Sources */,
 				FB6B9D0C203EC24F0062702B /* SystemPreferences.swift in Sources */,
 				FBCCA5FE203EE057008AD1BF /* Constants.swift in Sources */,
 				4C5764C71C982DC800364AFE /* AppDelegate.swift in Sources */,
+				4C1D2FCF204C1D7F00FD0F60 /* iTunes.swift in Sources */,
 				FBCCA5FB203ED78B008AD1BF /* NotificationsInteractor.swift in Sources */,
 				FBEF395320455FCC0039536B /* SpotifyInteractor.swift in Sources */,
+				4C1D2FD1204C1D8A00FD0F60 /* iTunesInteractor.swift in Sources */,
 				FBF18DE920442BB000FAD80A /* ShortcutsInterector.swift in Sources */,
 				4C5764E31C982E1900364AFE /* Track.swift in Sources */,
 			);

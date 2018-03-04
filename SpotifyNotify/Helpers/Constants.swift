@@ -13,7 +13,13 @@ struct SpotifyConstants {
 	static let bundleIdentifier = "com.spotify.client"
 	
 	static let notificationPlaybackChange = bundleIdentifier + ".PlaybackStateChanged"
-	static let albumArtURL = "https://embed.spotify.com/oembed/?url="
+}
+
+struct iTunesConstants {
+    static let applicationName = "iTunes"
+    static let bundleIdentifier = "com.apple.iTunes"
+    
+    static let notificationPlaybackChange = bundleIdentifier + ".playerInfo"
 }
 
 struct NahiveConstraints {
