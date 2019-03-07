@@ -1,43 +1,33 @@
 # LaunchAtLogin
 
-> Add "Launch at Login" functionality to your sandboxed macOS app in seconds
+> Add "Launch at Login" functionality to your macOS app in seconds
 
-It's usually quite a convoluted and error-prone process to add this. **No more!**
+It's usually quite a [convoluted and error-prone process](before-after.md) to add this. **No more!**
 
-```diff
--  1. Create a new target that will be the helper app that launches your app
--  2. Set `LSBackgroundOnly` to true in the `Info.plist` file
--  3. Set `Skip Install` to `YES` in the build settings for the helper app
--  4. Enable sandboxing for the helper app
--  5. Add a new `Copy Files` build phase to the main app
--  6. Select `Wrapper` as destination
--  7. Enter `Contents/Library/LoginItems` as subpath
--  8. Add the helper build product to the build phase
--  9. Copy-paste some boilerplate code into the helper app
-- 10. Remember to replace `bundleid.of.main.app` and `MainExectuableName` with your own values
-- 11. Copy-paste some code to register the helper app into your main app
-- 12. Make sure the main app and helper app use the same code signing certificate
-- 13. Manually verify that you did everything correctly
-+  1. Install this package
-+  2. Add a new "Run Script Phase"
-```
+This package works with both sandboxed and non-sandboxed apps and it's App Store compatible and used in my [Lungo](https://blog.sindresorhus.com/lungo-b364a6c2745f) and [Battery Indicator](https://sindresorhus.com/battery-indicator) apps.
 
-It's App Store compatible and used in my [Lungo](https://blog.sindresorhus.com/lungo-b364a6c2745f) and [Battery Indicator](https://sindresorhus.com/battery-indicator) app.
-
-You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg) project useful.
+*You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg) project useful if you're publishing your app outside the App Store.*
 
 
 ## Requirements
 
 - macOS 10.12+
-- Xcode 9.3+
-- Swift 4.1+
+- Xcode 10+
+- Swift 4.2+
 
 
-## Install with [Carthage](https://github.com/Carthage/Carthage#getting-started)
+## Install
+
+#### Carthage
 
 ```
 github "sindresorhus/LaunchAtLogin"
+```
+
+#### CocoaPods
+
+```ruby
+pod 'LaunchAtLogin'
 ```
 
 <a href="https://www.patreon.com/sindresorhus">
@@ -49,8 +39,16 @@ github "sindresorhus/LaunchAtLogin"
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) below "Embed Frameworks" in "Build Phases" with the following:
 
+Carthage:
+
 ```sh
-./Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh
+"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
+```
+
+CocoaPods:
+
+```sh
+"${PROJECT_DIR}/Pods/LaunchAtLogin/LaunchAtLogin/copy-helper.sh"
 ```
 
 Use it in your app:
@@ -77,7 +75,10 @@ The framework bundles the helper app needed to launch your app and copies it int
 
 ## Related
 
+- [Defaults](https://github.com/sindresorhus/Defaults) - Swifty and modern UserDefaults
+- [Preferences](https://github.com/sindresorhus/Preferences) - Add a preferences window to your macOS app in minutes
 - [DockProgress](https://github.com/sindresorhus/DockProgress) - Show progress in your app's Dock icon
+- [More…](https://github.com/search?q=user%3Asindresorhus+language%3Aswift)
 
 
 ## License
