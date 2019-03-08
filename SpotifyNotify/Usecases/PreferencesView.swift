@@ -97,86 +97,49 @@ final class PreferencesView: NSVisualEffectView {
 	}
 	
 	private func setupTargets() {
-        notificationsCheck.target = self
-        notificationsCheck.action = #selector(notificationsCheckTapped(sender:))
-		notificationsPlayPauseCheck.target = self
-		notificationsPlayPauseCheck.action = #selector(notificationsPlayPauseCheckTapped(sender:))
-		notificationsSoundCheck.target = self
-		notificationsSoundCheck.action = #selector(notificationsSoundCheckTapped(sender:))
-		notificationsSpotifyFocusCheck.target = self
-		notificationsSpotifyFocusCheck.action = #selector(notificationsSpotifyFocusCheckTapped(sender:))
-	
-		startOnLoginCheck.target = self
-		startOnLoginCheck.action = #selector(startOnLoginCheckTapped(sender:))
-		showAlbumArtCheck.target = self
-		showAlbumArtCheck.action = #selector(showAlbumArtCheckTapped(sender:))
-		roundAlbumArtCheck.target = self
-		roundAlbumArtCheck.action = #selector(roundAlbumArtCheckTapped(sender:))
-		showSpotifyIconCheck.target = self
-		showSpotifyIconCheck.action = #selector(showSpotifyIconCheckTapped(sender:))
-        showSongProgressCheck.target = self
-        showSongProgressCheck.action = #selector(showSongProgressCheckTapped(sender:))
-        
-        notificationLengthField.target = self
-        notificationLengthField.action = #selector(notificationLengthFieldChanged(sender:))
-        notificationLengthChanger.target = self
-        notificationLengthChanger.action = #selector(notificationLengthChangerTapped(sender:))
-		
-        menuIconCheck.target = self
-        menuIconCheck.action = #selector(menuIconCheckTapped(sender:))
-		menuIconPopUpButton.target = self
-		menuIconPopUpButton.action = #selector(menuIconPopUpButtonChanged(sender:))
-		
 		recordShortcutView.delegate = self
-		
-		sourceButton.target = self
-		sourceButton.action = #selector(sourceButtonTapped(sender:))
-		homeButton.target = self
-		homeButton.action = #selector(homeButtonTapped(sender:))
-		quitButton.target = self
-		quitButton.action = #selector(quitButtonTapped(sender:))
 	}
     
-	@objc func notificationsCheckTapped(sender: NSButton) {
+    @IBAction func notificationsCheckTapped(sender: NSButton) {
 		preferences.notificationsEnabled = sender.isSelected
         checkCompability()
 	}
 	
-	@objc func notificationsPlayPauseCheckTapped(sender: NSButton) {
+	@IBAction func notificationsPlayPauseCheckTapped(sender: NSButton) {
 		preferences.notificationsPlayPause = sender.isSelected
 	}
 	
-	@objc func notificationsSoundCheckTapped(sender: NSButton) {
+	@IBAction func notificationsSoundCheckTapped(sender: NSButton) {
 		preferences.notificationsSound = sender.isSelected
 	}
 	
-	@objc func notificationsSpotifyFocusCheckTapped(sender: NSButton) {
+	@IBAction func notificationsSpotifyFocusCheckTapped(sender: NSButton) {
 		preferences.notificationsDisableOnFocus = sender.isSelected
 	}
 	
-	@objc func startOnLoginCheckTapped(sender: NSButton) {
+	@IBAction func startOnLoginCheckTapped(sender: NSButton) {
 		preferences.startOnLogin = sender.isSelected
 		DistributedNotificationCenter.default().post(name: .userPreferencesDidChangeStartup, object: nil)
 	}
 	
-	@objc func showAlbumArtCheckTapped(sender: NSButton) {
+	@IBAction func showAlbumArtCheckTapped(sender: NSButton) {
 		preferences.showAlbumArt = sender.isSelected
         checkCompability()
 	}
 	
-	@objc func roundAlbumArtCheckTapped(sender: NSButton) {
+	@IBAction func roundAlbumArtCheckTapped(sender: NSButton) {
 		preferences.roundAlbumArt = sender.isSelected
 	}
 	
-	@objc func showSpotifyIconCheckTapped(sender: NSButton) {
+	@IBAction func showSpotifyIconCheckTapped(sender: NSButton) {
 		preferences.showSpotifyIcon = sender.isSelected
 	}
     
-    @objc func showSongProgressCheckTapped(sender: NSButton) {
+    @IBAction func showSongProgressCheckTapped(sender: NSButton) {
         preferences.showSongProgress = sender.isSelected
     }
     
-    @objc func notificationLengthFieldChanged(sender: NSTextField) {
+    @IBAction func notificationLengthFieldChanged(sender: NSTextField) {
         guard sender.doubleValue >= 1.0 else {
             notificationLengthField.integerValue = 1
             preferences.notificationsLength = 1
@@ -188,7 +151,7 @@ final class PreferencesView: NSVisualEffectView {
         notificationLengthChanger.integerValue = Int(sender.doubleValue)
     }
     
-    @objc func notificationLengthChangerTapped(sender: NSStepper) {
+    @IBAction func notificationLengthChangerTapped(sender: NSStepper) {
         guard sender.integerValue >= 1 else {
             notificationLengthField.integerValue = 1
             preferences.notificationsLength = 1
@@ -200,7 +163,7 @@ final class PreferencesView: NSVisualEffectView {
         notificationLengthField.doubleValue = Double(sender.integerValue)
     }
 	
-    @objc func menuIconCheckTapped(sender: NSButton) {
+    @IBAction func menuIconCheckTapped(sender: NSButton) {
         if sender.isSelected {
             preferences.menuIcon = StatusBarIcon(value: menuIconPopUpButton.indexOfSelectedItem)
         } else {
@@ -210,20 +173,20 @@ final class PreferencesView: NSVisualEffectView {
         DistributedNotificationCenter.default().post(name: .userPreferencesDidChangeIcon, object: nil)
     }
     
-	@objc func menuIconPopUpButtonChanged(sender: NSPopUpButton) {
+	@IBAction func menuIconPopUpButtonChanged(sender: NSPopUpButton) {
 		preferences.menuIcon = StatusBarIcon(value: sender.indexOfSelectedItem)
 		DistributedNotificationCenter.default().post(name: .userPreferencesDidChangeIcon, object: nil)
 	}
 	
-	@objc func sourceButtonTapped(sender: NSButton) {
+	@IBAction func sourceButtonTapped(sender: NSButton) {
 		NSWorkspace.shared.open(NahiveConstraints.repo)
 	}
 	
-	@objc func homeButtonTapped(sender: NSButton) {
+	@IBAction func homeButtonTapped(sender: NSButton) {
 		NSWorkspace.shared.open(NahiveConstraints.homepage)
 	}
 	
-	@objc func quitButtonTapped(sender: NSButton) {
+	@IBAction func quitButtonTapped(sender: NSButton) {
         NSApplication.shared.terminate(sender)
 	}
 }
