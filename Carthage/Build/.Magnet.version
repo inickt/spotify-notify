@@ -3,7 +3,8 @@
   "Mac" : [
     {
       "name" : "Magnet",
-      "hash" : "5286eebd89c87f8975b832efe6f724ce0306b3bafe70f73504618bdaadd84894"
+      "hash" : "fc221b59ec30bcb1da9ad8cfd989f09c0c878ff1de73ab4253828a61cc2cb4c9",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]
 }

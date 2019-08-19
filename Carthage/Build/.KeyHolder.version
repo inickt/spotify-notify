@@ -3,7 +3,8 @@
   "Mac" : [
     {
       "name" : "KeyHolder",
-      "hash" : "23129a7b6e04559fb6a0b8ae366c545c2c8433b3bf60308bc55e8a5de78b2877"
+      "hash" : "21a023fc03991cc04359a836c43fd7833dbcbbbfa189c6b6ce51538c7b75d51c",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]
 }
