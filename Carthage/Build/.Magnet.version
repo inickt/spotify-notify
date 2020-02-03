@@ -1,10 +1,19 @@
 {
-  "commitish" : "v2.3.1",
   "Mac" : [
     {
       "name" : "Magnet",
-      "hash" : "fc221b59ec30bcb1da9ad8cfd989f09c0c878ff1de73ab4253828a61cc2cb4c9",
-      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+      "hash" : "0e5b643c3bf1cdb547ecbd66d3513a054657b35b666c254a302d9e7c398bee8b",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
     }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "v2.3.1",
+  "iOS" : [
+
   ]
 }
