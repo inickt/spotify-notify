@@ -42,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		setup()
+        updateStatus()
 	}
 	
 	func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -199,17 +200,20 @@ extension AppDelegate {
 	}
 	
 	private func updateStatus() {
-		switch spotifyInteractor.playerState {
-		case .playing?:
+        guard let state = spotifyInteractor.playerState else {
+            statusStatus.title = "Status: Unavailable"
+            return
+        }
+        
+        switch state {
+		case .playing:
 			statusStatus.title = "Status: Playing"
-		case .paused?:
+		case .paused:
 			statusStatus.title = "Status: Paused"
-		case .stopped?:
+		case .stopped:
 			statusStatus.title = "Status: Stopped"
-		case .none:
-			statusStatus.title = "Status: Unavailable"
         default:
-            break
+            statusStatus.title = "Status: Unknown"
 		}
 	}
 }
