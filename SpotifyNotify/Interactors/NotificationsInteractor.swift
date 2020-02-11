@@ -53,8 +53,13 @@ final class NotificationsInteractor {
 	}
 
     /// Called by notification delegate
-    func handleAction() {
-        spotifyInteractor.nextTrack()
+    func handle(action: String) {
+        switch action {
+        case NotificationIdentifier.skip:
+            spotifyInteractor.nextTrack()
+        default:
+            spotifyInteractor.activate()
+        }
     }
 
     // MARK: - Legacy Notifications

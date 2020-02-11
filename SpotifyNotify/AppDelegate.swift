@@ -37,14 +37,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	var statusBar: NSStatusItem!
 	
+    /// Used to avoid opening the preferences when a notification is clicked
+    private var shouldIgnoreNextReopen = false
+
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		setup()
 	}
 	
 	func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-		guard !flag else { return true }
-		
-		showPreferences()
+        if !flag && !shouldIgnoreNextReopen {
+            showPreferences()
+        }
+
+        shouldIgnoreNextReopen = false
 		return true
 	}
 }
@@ -216,13 +221,10 @@ extension AppDelegate: NSUserNotificationCenterDelegate {
 	}
 	
 	func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
-		switch notification.activationType {
-		case .actionButtonClicked:
-			notificationsInteractor.handleAction()
-		default:
-			NSWorkspace.shared.launchApplication(SpotifyConstants.applicationName)
-		}
-		
+        shouldIgnoreNextReopen = true
+
+        let action = notification.activationType == .actionButtonClicked ? NotificationIdentifier.skip : ""
+        notificationsInteractor.handle(action: action)
 	}
 	
 	func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
@@ -243,11 +245,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        switch response.actionIdentifier {
-        case NotificationIdentifier.skip:
-            notificationsInteractor.handleAction()
-        default:
-            NSWorkspace.shared.launchApplication(SpotifyConstants.applicationName)
-        }
+        shouldIgnoreNextReopen = true
+
+        notificationsInteractor.handle(action: response.actionIdentifier)
+        completionHandler()
     }
 }

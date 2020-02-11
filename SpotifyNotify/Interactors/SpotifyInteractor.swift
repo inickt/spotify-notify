@@ -19,6 +19,10 @@ final class SpotifyInteractor {
 	var playerState: SpotifyEPlS? { return spotify?.playerState }
 	var playerPosition: Double? { return spotify?.playerPosition }
 	
+    func activate() {
+        spotify?.activate()
+    }
+    
 	func nextTrack() {
 		spotify?.nextTrack?()
 	}
