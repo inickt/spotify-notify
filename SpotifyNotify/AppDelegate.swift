@@ -61,10 +61,7 @@ extension AppDelegate {
 		setupTargets()
         setupFirstRun()
 		setupShortcuts()
-
-        if #available(OSX 10.14, *) {
-            setupUserNotifications()
-        }
+		setupUserNotifications()
 	}
 	
 	private func setupObservers() {
@@ -84,24 +81,23 @@ extension AppDelegate {
 	}
 	
 	@objc private func setupMenuBarIcon() {
-		switch preferences.menuIcon {
-		case .default:
-			statusBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-			statusBar.image = #imageLiteral(resourceName: "IconStatusBarColor")
-			statusBar.menu = statusMenu
-			statusBar.image?.isTemplate = false
-			statusBar.highlightMode = true
-		case .monochromatic:
-			statusBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-			statusBar.image =  #imageLiteral(resourceName: "IconStatusBarBlack")
-			statusBar.menu = statusMenu
-			statusBar.image?.isTemplate = true
-			statusBar.highlightMode = true
-		case .none:
+		if preferences.menuIcon == .none {
 			statusBar = nil
+			return
 		}
+
+		statusBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+		statusBar.menu = statusMenu
+
+		var image = #imageLiteral(resourceName: "IconStatusBarColor")
+		if preferences.menuIcon == .monochromatic {
+			image = #imageLiteral(resourceName: "IconStatusBarBlack")
+			image.isTemplate = true
+		}
+
+		statusBar.button!.image = image
 	}
-	
+
 	@objc private func setupStartup() {
         LaunchAtLogin.isEnabled = preferences.startOnLogin
 	}
@@ -134,7 +130,6 @@ extension AppDelegate {
 	}
 
     /// Setup user notifications using UserNotifications framework
-    @available(OSX 10.14, *)
     private func setupUserNotifications() {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
@@ -150,7 +145,6 @@ extension AppDelegate {
     }
 
     /// Add Skip and Close buttons to the notification
-    @available(OSX 10.14, *)
     private func setNotificationCategories() {
         let skip = UNNotificationAction(identifier: NotificationIdentifier.skip, title: "Skip")
 
@@ -216,7 +210,6 @@ extension AppDelegate: NSUserNotificationCenterDelegate {
 	}
 }
 
-@available(OSX 10.14, *)
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,

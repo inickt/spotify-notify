@@ -30,11 +30,7 @@ final class NotificationsInteractor {
 
         // Create and deliver notifications
         let viewModel = NotificationViewModel(track: currentTrack)
-        if #available(macOS 10.14, *) {
-            createModernNotification(using: viewModel)
-        } else {
-            createLegacyNotification(using: viewModel)
-        }
+		createNotification(using: viewModel)
 	}
 
     /// Called by notification delegate
@@ -59,69 +55,7 @@ final class NotificationsInteractor {
         return true
     }
 
-    // MARK: - Legacy Notifications
-
-    /// Use `NSUserNotificationCenter` to deliver the notification in macOS 10.13 and below
-    private func createLegacyNotification(using viewModel: NotificationViewModel) {
-        let notification = NSUserNotification()
-
-        notification.identifier = viewModel.identifier
-        notification.title = viewModel.title
-        notification.subtitle = viewModel.subtitle
-        notification.informativeText = viewModel.body
-        notification.hasActionButton = true
-        notification.actionButtonTitle = "Skip"
-
-        addArtwork(to: notification, using: viewModel)
-
-        // decide whether to add sound
-        if preferences.notificationsSound {
-            notification.soundName = NSUserNotificationDefaultSoundName
-        }
-
-        deliverLegacyNotification(notification)
-    }
-
-    private func addArtwork(to notification: NSUserNotification, using viewModel: NotificationViewModel) {
-        guard viewModel.shouldShowArtwork else { return }
-
-        viewModel.artworkURL?.asyncImage { art in
-            // decide whether to add spotify icon
-            if self.preferences.showSpotifyIcon {
-                notification.contentImage = art
-            } else {
-                notification.identityImage = art
-
-                // decide whether to round art
-                if self.preferences.roundAlbumArt {
-                    notification.identityImageStyle = .rounded
-                } else {
-                    notification.identityImageStyle = .normal
-                }
-            }
-
-            // remove previous notification and replace it with one with image
-            DispatchQueue.main.async {
-                self.deliverLegacyNotification(notification)
-            }
-        }
-    }
-
-    private func deliverLegacyNotification(_ notification: NSUserNotification) {
-        NSUserNotificationCenter.default.removeAllDeliveredNotifications()
-        NSUserNotificationCenter.default.deliver(notification)
-
-        // remove after userset number of seconds if not taken action
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(preferences.notificationsLength)) {
-            NSUserNotificationCenter.default.removeDeliveredNotification(notification)
-        }
-    }
-
-    // MARK: - Modern Notfications
-
-    /// Use `UserNotifications` to deliver the notification in macOS 10.14 and above
-    @available(OSX 10.14, *)
-    private func createModernNotification(using viewModel: NotificationViewModel) {
+    private func createNotification(using viewModel: NotificationViewModel) {
         let notification = UNMutableNotificationContent()
 
         notification.title = viewModel.title
@@ -137,11 +71,10 @@ final class NotificationsInteractor {
         if viewModel.shouldShowArtwork {
             addArtworkAndDeliver(to: notification, using: viewModel)
         } else {
-            deliverModernNotification(identifier: viewModel.identifier, content: notification)
+            deliverNotification(identifier: viewModel.identifier, content: notification)
         }
     }
 
-    @available(OSX 10.14, *)
     private func addArtworkAndDeliver(to notification: UNMutableNotificationContent, using viewModel: NotificationViewModel) {
         guard viewModel.shouldShowArtwork else { return }
 
@@ -167,14 +100,13 @@ final class NotificationsInteractor {
 
             // remove previous notification and replace it with one with image
             DispatchQueue.main.async {
-                self.deliverModernNotification(identifier: viewModel.identifier, content: notification)
+                self.deliverNotification(identifier: viewModel.identifier, content: notification)
             }
         }
     }
 
     /// Deliver notifications using `UNUserNotificationCenter`
-    @available(OSX 10.14, *)
-    private func deliverModernNotification(identifier: String, content: UNMutableNotificationContent) {
+    private func deliverNotification(identifier: String, content: UNMutableNotificationContent) {
         // Create a request
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
 
