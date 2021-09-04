@@ -24,9 +24,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var preferencesWindow: NSWindow!
 	@IBOutlet weak var statusMenu: NSMenu!
 	@IBOutlet weak var statusStatus: NSMenuItem!
-	@IBOutlet weak var statusPrevious: NSMenuItem!
-	@IBOutlet weak var statusPlay: NSMenuItem!
-	@IBOutlet weak var statusNext: NSMenuItem!
 	@IBOutlet weak var statusPreferences: NSMenuItem!
 	@IBOutlet weak var statusQuit: NSMenuItem!
 	
@@ -110,9 +107,6 @@ extension AppDelegate {
 	}
 	
 	private func setupTargets() {
-		statusPrevious.action = #selector(previousSong)
-		statusPlay.action = #selector(playPause)
-		statusNext.action = #selector(nextSong)
 		statusPreferences.action = #selector(showPreferences)
 		statusQuit.action = #selector(NSApplication.terminate(_:))
 	}
@@ -168,18 +162,6 @@ extension AppDelegate {
         UNUserNotificationCenter.current().setNotificationCategories([category])
     }
 
-	@objc fileprivate func previousSong(){
-		spotifyInteractor.previousTrack()
-	}
-	
-	@objc fileprivate func playPause(){
-		spotifyInteractor.playPause()
-	}
-	
-	@objc fileprivate func nextSong(){
-		spotifyInteractor.nextTrack()
-	}
-	
 	@objc fileprivate func showPreferences() {
 		NSApp.activate(ignoringOtherApps: true)
 		preferencesWindow.makeKeyAndOrderFront(nil)
