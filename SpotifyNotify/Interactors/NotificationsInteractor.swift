@@ -19,29 +19,14 @@ final class NotificationsInteractor {
 	
 	private var previousTrack: Track?
 	private var currentTrack: Track?
-    
-    func showNotification() {
-        
-		// return if notifications are disabled
-		guard preferences.notificationsEnabled else { return }
-		
-		// return if notifications are disabled when in focus
-		if spotifyInteractor.isFrontmost && preferences.notificationsDisableOnFocus { return }
-		
-		previousTrack = currentTrack
-		currentTrack  = spotifyInteractor.currentTrack
-	
-		// return if previous track is same as previous => play/pause and if it's disabled
-		guard currentTrack != previousTrack || preferences.notificationsPlayPause else {
-			return
-		}
-		
-		guard spotifyInteractor.playerState == .some(.playing) else {
-			return
-		}
 
-        // return if current track is nil
+    func showNotification(force: Bool = false) {
+        previousTrack = currentTrack
+        currentTrack  = spotifyInteractor.currentTrack
+
         guard let currentTrack = currentTrack else { return }
+
+        guard force || shouldShow() else { return }
 
         // Create and deliver notifications
         let viewModel = NotificationViewModel(track: currentTrack)
@@ -60,6 +45,18 @@ final class NotificationsInteractor {
         default:
             spotifyInteractor.activate()
         }
+    }
+
+    private func shouldShow() -> Bool {
+        guard preferences.notificationsEnabled else { return false }
+
+        if preferences.notificationsDisableOnFocus && spotifyInteractor.isFrontmost { return false }
+
+        if !preferences.notificationsPlayPause && currentTrack == previousTrack { return false }
+
+        guard spotifyInteractor.playerState == .some(.playing) else { return false }
+
+        return true
     }
 
     // MARK: - Legacy Notifications

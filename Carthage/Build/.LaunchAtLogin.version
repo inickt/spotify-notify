@@ -1,8 +1,9 @@
 {
   "Mac" : [
     {
+      "hash" : "7736e69ae7da37e6ccf68a1b632e944813c3b4e9770367beea6e4fd1c73aca1f",
       "name" : "LaunchAtLogin",
-      "hash" : "c5b396211fd4d7fca6145a1bb95a9643b4978af4ef8d3fda487f253f418ecae6",
+      "linking" : "dynamic",
       "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
     }
   ],
@@ -12,7 +13,7 @@
   "tvOS" : [
 
   ],
-  "commitish" : "v3.0.0",
+  "commitish" : "v4.1.0",
   "iOS" : [
 
   ]

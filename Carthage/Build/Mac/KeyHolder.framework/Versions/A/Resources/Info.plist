@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>18G3020</string>
+	<string>18G9323</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>4.1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -41,7 +41,7 @@
 	<key>DTXcodeBuild</key>
 	<string>11C504</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.11</string>
+	<string>10.10</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016年 Shunsuke Furubayashi. All rights reserved.</string>
 </dict>

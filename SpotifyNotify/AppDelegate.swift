@@ -176,7 +176,7 @@ extension AppDelegate {
 	}
 	
 	@objc func shortcutKeyTapped() {
-		notificationsInteractor.showNotification()
+        notificationsInteractor.showNotification(force: true)
 	}
 	
 	private func updateStatus() {

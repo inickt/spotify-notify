@@ -1,8 +1,9 @@
 {
   "Mac" : [
     {
+      "hash" : "7e366d002aeea0c81b07e674889c33375c3df353b719d28afae33feca1bab6b1",
       "name" : "KeyHolder",
-      "hash" : "5a6465510308cfd14918d977bafa3acbd7e66447d5371e76bbb1324ea26f8926",
+      "linking" : "dynamic",
       "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
     }
   ],
@@ -12,7 +13,7 @@
   "tvOS" : [
 
   ],
-  "commitish" : "v3.0.1",
+  "commitish" : "v4.1.0",
   "iOS" : [
 
   ]

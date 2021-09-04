@@ -7,17 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090C241F2462DF49007746B4 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C241E2462DF49007746B4 /* ClearButton.swift */; };
+		093B1449245B262F00D00737 /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA21712B2072183500A63D31 /* Magnet.framework */; };
 		312C0FDF1D13AA1F00973348 /* KeyHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 312C0FDE1D13AA1F00973348 /* KeyHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		312C0FE61D13AA1F00973348 /* KeyHolder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312C0FDB1D13AA1F00973348 /* KeyHolder.framework */; };
 		312C0FEB1D13AA1F00973348 /* KeyHolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C0FEA1D13AA1F00973348 /* KeyHolderTests.swift */; };
 		31FAEB611D13CC39008A6D6E /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAEB601D13CC39008A6D6E /* RecordView.swift */; };
-		31FAEB841D13EB9C008A6D6E /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FAEB811D13EB95008A6D6E /* Magnet.framework */; };
-		FA71454B1D14967A004A04D4 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71454A1D14967A004A04D4 /* Util.swift */; };
-		FA71454F1D1496C5004A04D4 /* clear-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA71454D1D1496C5004A04D4 /* clear-off@2x.png */; };
-		FA7145501D1496C5004A04D4 /* clear-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA71454E1D1496C5004A04D4 /* clear-on@2x.png */; };
-		FA7145531D1496F4004A04D4 /* clear-off.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7145511D1496F4004A04D4 /* clear-off.png */; };
-		FA7145541D1496F4004A04D4 /* clear-on.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7145521D1496F4004A04D4 /* clear-on.png */; };
-		FA99CB4A2072180B00B04AB9 /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FAEB811D13EB95008A6D6E /* Magnet.framework */; };
+		FA8D7841247AB738007BFAC1 /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D7840247AB738007BFAC1 /* NSColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,20 +23,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 312C0FDA1D13AA1F00973348;
 			remoteInfo = KeyHolder;
-		};
-		31FAEB801D13EB95008A6D6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 31FAEB7B1D13EB95008A6D6E /* Magnet.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FAEC34AF1C9059DF004177E2;
-			remoteInfo = Magnet;
-		};
-		31FAEB821D13EB95008A6D6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 31FAEB7B1D13EB95008A6D6E /* Magnet.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FAEC34B91C9059DF004177E2;
-			remoteInfo = MagnetTests;
 		};
 		FA21712A2072183500A63D31 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -59,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		090C241E2462DF49007746B4 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		312C0FDB1D13AA1F00973348 /* KeyHolder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeyHolder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		312C0FDE1D13AA1F00973348 /* KeyHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyHolder.h; sourceTree = "<group>"; };
 		312C0FE01D13AA1F00973348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,13 +49,8 @@
 		312C0FEA1D13AA1F00973348 /* KeyHolderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyHolderTests.swift; sourceTree = "<group>"; };
 		312C0FEC1D13AA1F00973348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31FAEB601D13CC39008A6D6E /* RecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
-		31FAEB7B1D13EB95008A6D6E /* Magnet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Magnet.xcodeproj; path = ../Carthage/Checkouts/Magnet/Lib/Magnet.xcodeproj; sourceTree = "<group>"; };
 		FA2171252072183500A63D31 /* Magnet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Magnet.xcodeproj; path = ../Carthage/Checkouts/Magnet/Lib/Magnet.xcodeproj; sourceTree = "<group>"; };
-		FA71454A1D14967A004A04D4 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		FA71454D1D1496C5004A04D4 /* clear-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-off@2x.png"; sourceTree = "<group>"; };
-		FA71454E1D1496C5004A04D4 /* clear-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-on@2x.png"; sourceTree = "<group>"; };
-		FA7145511D1496F4004A04D4 /* clear-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-off.png"; sourceTree = "<group>"; };
-		FA7145521D1496F4004A04D4 /* clear-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-on.png"; sourceTree = "<group>"; };
+		FA8D7840247AB738007BFAC1 /* NSColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31FAEB841D13EB9C008A6D6E /* Magnet.framework in Frameworks */,
+				093B1449245B262F00D00737 /* Magnet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA99CB4A2072180B00B04AB9 /* Magnet.framework in Frameworks */,
 				312C0FE61D13AA1F00973348 /* KeyHolder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +80,6 @@
 				312C0FE91D13AA1F00973348 /* KeyHolderTests */,
 				312C0FDC1D13AA1F00973348 /* Products */,
 				FA99CB492072180B00B04AB9 /* Frameworks */,
-				31FAEB7B1D13EB95008A6D6E /* Magnet.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,9 +95,9 @@
 		312C0FDD1D13AA1F00973348 /* KeyHolder */ = {
 			isa = PBXGroup;
 			children = (
-				FA71454C1D149687004A04D4 /* Resources */,
+				FA8D783D247AB71C007BFAC1 /* Extensions */,
 				31FAEB601D13CC39008A6D6E /* RecordView.swift */,
-				FA71454A1D14967A004A04D4 /* Util.swift */,
+				090C241E2462DF49007746B4 /* ClearButton.swift */,
 				312C0FDE1D13AA1F00973348 /* KeyHolder.h */,
 				312C0FE01D13AA1F00973348 /* Info.plist */,
 			);
@@ -137,15 +113,6 @@
 			path = KeyHolderTests;
 			sourceTree = "<group>";
 		};
-		31FAEB7C1D13EB95008A6D6E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				31FAEB811D13EB95008A6D6E /* Magnet.framework */,
-				31FAEB831D13EB95008A6D6E /* MagnetTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		FA2171262072183500A63D31 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,15 +122,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA71454C1D149687004A04D4 /* Resources */ = {
+		FA8D783D247AB71C007BFAC1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FA7145511D1496F4004A04D4 /* clear-off.png */,
-				FA71454D1D1496C5004A04D4 /* clear-off@2x.png */,
-				FA7145521D1496F4004A04D4 /* clear-on.png */,
-				FA71454E1D1496C5004A04D4 /* clear-on@2x.png */,
+				FA8D7840247AB738007BFAC1 /* NSColorExtension.swift */,
 			);
-			path = Resources;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FA99CB492072180B00B04AB9 /* Frameworks */ = {
@@ -231,12 +195,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Clipy Project";
 				TargetAttributes = {
 					312C0FDA1D13AA1F00973348 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					312C0FE41D13AA1F00973348 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -249,6 +213,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 312C0FD11D13AA1F00973348;
@@ -258,10 +223,6 @@
 				{
 					ProductGroup = FA2171262072183500A63D31 /* Products */;
 					ProjectRef = FA2171252072183500A63D31 /* Magnet.xcodeproj */;
-				},
-				{
-					ProductGroup = 31FAEB7C1D13EB95008A6D6E /* Products */;
-					ProjectRef = 31FAEB7B1D13EB95008A6D6E /* Magnet.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -273,20 +234,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		31FAEB811D13EB95008A6D6E /* Magnet.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Magnet.framework;
-			remoteRef = 31FAEB801D13EB95008A6D6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		31FAEB831D13EB95008A6D6E /* MagnetTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MagnetTests.xctest;
-			remoteRef = 31FAEB821D13EB95008A6D6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		FA21712B2072183500A63D31 /* Magnet.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -308,10 +255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA7145501D1496C5004A04D4 /* clear-on@2x.png in Resources */,
-				FA7145541D1496F4004A04D4 /* clear-on.png in Resources */,
-				FA71454F1D1496C5004A04D4 /* clear-off@2x.png in Resources */,
-				FA7145531D1496F4004A04D4 /* clear-off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090C241F2462DF49007746B4 /* ClearButton.swift in Sources */,
 				31FAEB611D13CC39008A6D6E /* RecordView.swift in Sources */,
-				FA71454B1D14967A004A04D4 /* Util.swift in Sources */,
+				FA8D7841247AB738007BFAC1 /* NSColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -401,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -415,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -453,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -480,8 +426,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -502,8 +447,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.clipy-app.KeyHolder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

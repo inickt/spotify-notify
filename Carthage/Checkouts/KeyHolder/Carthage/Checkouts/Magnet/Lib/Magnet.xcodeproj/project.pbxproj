@@ -7,19 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA15D68E21554855009D146A /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15D68D21554855009D146A /* BoolExtensions.swift */; };
-		FA15D69021554A0E009D146A /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15D68F21554A0E009D146A /* BoolTests.swift */; };
-		FA7145471D147F1B004A04D4 /* KeyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7145461D147F1B004A04D4 /* KeyTransformer.swift */; };
+		090077D4245D449F0099B20A /* KeyComboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090077D3245D449F0099B20A /* KeyComboTests.swift */; };
+		091D85EA245A917500930473 /* NSEventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D85E6245A917500930473 /* NSEventExtension.swift */; };
+		091D85EB245A917500930473 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D85E7245A917500930473 /* IntExtension.swift */; };
+		091D85EC245A917500930473 /* KeyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D85E8245A917500930473 /* KeyExtension.swift */; };
+		091D85ED245A917500930473 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D85E9245A917500930473 /* CollectionExtension.swift */; };
+		099F29FA246CFA9500992925 /* v2_0_0KeyCombo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F29F9246CFA9500992925 /* v2_0_0KeyCombo.swift */; };
+		099F2A02246D091400992925 /* ModifierEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F29FF246D091400992925 /* ModifierEventHandler.swift */; };
+		099F2A07246D094500992925 /* ModifierEventHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F2A04246D094500992925 /* ModifierEventHandlerTests.swift */; };
+		09DEE124245B128C00169BEC /* Sauce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091D85CF2459553A00930473 /* Sauce.framework */; };
+		FA3AA2162315A6A3007EAA1F /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AA2152315A6A3007EAA1F /* CollectionExtensionTests.swift */; };
+		FADEA45A24796103003AEC83 /* v3_1_0KeyCombo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADEA45924796103003AEC83 /* v3_1_0KeyCombo.swift */; };
 		FAEC34B31C9059DF004177E2 /* Magnet.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEC34B21C9059DF004177E2 /* Magnet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAEC34BA1C9059DF004177E2 /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC34AF1C9059DF004177E2 /* Magnet.framework */; };
-		FAEC34BF1C9059DF004177E2 /* MagnetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC34BE1C9059DF004177E2 /* MagnetTests.swift */; };
 		FAEC34D81C905B4D004177E2 /* HotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC34D71C905B4D004177E2 /* HotKey.swift */; };
 		FAEC34DA1C905B5A004177E2 /* KeyCombo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC34D91C905B5A004177E2 /* KeyCombo.swift */; };
 		FAEC34DE1C905B7C004177E2 /* HotKeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC34DD1C905B7C004177E2 /* HotKeyCenter.swift */; };
-		FAFA5B711D1FD1FA003CB2DC /* KeyCodeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA5B701D1FD1FA003CB2DC /* KeyCodeTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		091D85CE2459553A00930473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 091D85C92459553A00930473 /* Sauce.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FAA41320210E2C730097D522;
+			remoteInfo = Sauce;
+		};
+		091D85D02459553A00930473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 091D85C92459553A00930473 /* Sauce.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FAA41329210E2C730097D522;
+			remoteInfo = SauceTests;
+		};
 		FAEC34BB1C9059DF004177E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAEC34A61C9059DF004177E2 /* Project object */;
@@ -30,19 +50,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA15D68D21554855009D146A /* BoolExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolExtensions.swift; sourceTree = "<group>"; };
-		FA15D68F21554A0E009D146A /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
-		FA7145461D147F1B004A04D4 /* KeyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyTransformer.swift; sourceTree = "<group>"; };
+		090077D3245D449F0099B20A /* KeyComboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyComboTests.swift; sourceTree = "<group>"; };
+		091D85C92459553A00930473 /* Sauce.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sauce.xcodeproj; path = ../Carthage/Checkouts/Sauce/Lib/Sauce.xcodeproj; sourceTree = "<group>"; };
+		091D85E6245A917500930473 /* NSEventExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSEventExtension.swift; sourceTree = "<group>"; };
+		091D85E7245A917500930473 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		091D85E8245A917500930473 /* KeyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyExtension.swift; sourceTree = "<group>"; };
+		091D85E9245A917500930473 /* CollectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		099F29F9246CFA9500992925 /* v2_0_0KeyCombo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = v2_0_0KeyCombo.swift; sourceTree = "<group>"; };
+		099F29FF246D091400992925 /* ModifierEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierEventHandler.swift; sourceTree = "<group>"; };
+		099F2A04246D094500992925 /* ModifierEventHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierEventHandlerTests.swift; sourceTree = "<group>"; };
+		FA3AA2152315A6A3007EAA1F /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
+		FADEA45924796103003AEC83 /* v3_1_0KeyCombo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = v3_1_0KeyCombo.swift; sourceTree = "<group>"; };
 		FAEC34AF1C9059DF004177E2 /* Magnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Magnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEC34B21C9059DF004177E2 /* Magnet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
 		FAEC34B41C9059DF004177E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAEC34B91C9059DF004177E2 /* MagnetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagnetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAEC34BE1C9059DF004177E2 /* MagnetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetTests.swift; sourceTree = "<group>"; };
 		FAEC34C01C9059DF004177E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAEC34D71C905B4D004177E2 /* HotKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKey.swift; sourceTree = "<group>"; };
 		FAEC34D91C905B5A004177E2 /* KeyCombo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCombo.swift; sourceTree = "<group>"; };
 		FAEC34DD1C905B7C004177E2 /* HotKeyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeyCenter.swift; sourceTree = "<group>"; };
-		FAFA5B701D1FD1FA003CB2DC /* KeyCodeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodeTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DEE124245B128C00169BEC /* Sauce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +91,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091D85C82459552300930473 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				091D85C92459553A00930473 /* Sauce.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		091D85CA2459553A00930473 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				091D85CF2459553A00930473 /* Sauce.framework */,
+				091D85D12459553A00930473 /* SauceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		091D85E5245A915A00930473 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				091D85E9245A917500930473 /* CollectionExtension.swift */,
+				091D85E7245A917500930473 /* IntExtension.swift */,
+				091D85E8245A917500930473 /* KeyExtension.swift */,
+				091D85E6245A917500930473 /* NSEventExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		099F29F8246CFA8700992925 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				099F29F9246CFA9500992925 /* v2_0_0KeyCombo.swift */,
+				FADEA45924796103003AEC83 /* v3_1_0KeyCombo.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		FAEC34A51C9059DF004177E2 = {
 			isa = PBXGroup;
 			children = (
 				FAEC34B11C9059DF004177E2 /* Magnet */,
 				FAEC34BD1C9059DF004177E2 /* MagnetTests */,
 				FAEC34B01C9059DF004177E2 /* Products */,
+				091D85C82459552300930473 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,12 +150,11 @@
 		FAEC34B11C9059DF004177E2 /* Magnet */ = {
 			isa = PBXGroup;
 			children = (
+				091D85E5245A915A00930473 /* Extensions */,
 				FAEC34D71C905B4D004177E2 /* HotKey.swift */,
 				FAEC34D91C905B5A004177E2 /* KeyCombo.swift */,
 				FAEC34DD1C905B7C004177E2 /* HotKeyCenter.swift */,
-				FA7145461D147F1B004A04D4 /* KeyTransformer.swift */,
-				FAFA5B701D1FD1FA003CB2DC /* KeyCodeTransformer.swift */,
-				FA15D68D21554855009D146A /* BoolExtensions.swift */,
+				099F29FF246D091400992925 /* ModifierEventHandler.swift */,
 				FAEC34B21C9059DF004177E2 /* Magnet.h */,
 				FAEC34B41C9059DF004177E2 /* Info.plist */,
 			);
@@ -100,9 +164,11 @@
 		FAEC34BD1C9059DF004177E2 /* MagnetTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAEC34BE1C9059DF004177E2 /* MagnetTests.swift */,
+				099F29F8246CFA8700992925 /* Fixtures */,
+				FA3AA2152315A6A3007EAA1F /* CollectionExtensionTests.swift */,
+				090077D3245D449F0099B20A /* KeyComboTests.swift */,
+				099F2A04246D094500992925 /* ModifierEventHandlerTests.swift */,
 				FAEC34C01C9059DF004177E2 /* Info.plist */,
-				FA15D68F21554A0E009D146A /* BoolTests.swift */,
 			);
 			path = MagnetTests;
 			sourceTree = SOURCE_ROOT;
@@ -164,29 +230,36 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Shunsuke Furubayashi";
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Clipy Project";
 				TargetAttributes = {
 					FAEC34AE1C9059DF004177E2 = {
 						CreatedOnToolsVersion = 7.0.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					FAEC34B81C9059DF004177E2 = {
 						CreatedOnToolsVersion = 7.0.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
 			buildConfigurationList = FAEC34A91C9059DF004177E2 /* Build configuration list for PBXProject "Magnet" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FAEC34A51C9059DF004177E2;
 			productRefGroup = FAEC34B01C9059DF004177E2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 091D85CA2459553A00930473 /* Products */;
+					ProjectRef = 091D85C92459553A00930473 /* Sauce.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FAEC34AE1C9059DF004177E2 /* Magnet */,
@@ -194,6 +267,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		091D85CF2459553A00930473 /* Sauce.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sauce.framework;
+			remoteRef = 091D85CE2459553A00930473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		091D85D12459553A00930473 /* SauceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SauceTests.xctest;
+			remoteRef = 091D85D02459553A00930473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FAEC34AD1C9059DF004177E2 /* Resources */ = {
@@ -219,10 +309,12 @@
 			files = (
 				FAEC34DA1C905B5A004177E2 /* KeyCombo.swift in Sources */,
 				FAEC34DE1C905B7C004177E2 /* HotKeyCenter.swift in Sources */,
+				091D85EA245A917500930473 /* NSEventExtension.swift in Sources */,
 				FAEC34D81C905B4D004177E2 /* HotKey.swift in Sources */,
-				FA15D68E21554855009D146A /* BoolExtensions.swift in Sources */,
-				FAFA5B711D1FD1FA003CB2DC /* KeyCodeTransformer.swift in Sources */,
-				FA7145471D147F1B004A04D4 /* KeyTransformer.swift in Sources */,
+				099F2A02246D091400992925 /* ModifierEventHandler.swift in Sources */,
+				091D85EC245A917500930473 /* KeyExtension.swift in Sources */,
+				091D85ED245A917500930473 /* CollectionExtension.swift in Sources */,
+				091D85EB245A917500930473 /* IntExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEC34BF1C9059DF004177E2 /* MagnetTests.swift in Sources */,
-				FA15D69021554A0E009D146A /* BoolTests.swift in Sources */,
+				FADEA45A24796103003AEC83 /* v3_1_0KeyCombo.swift in Sources */,
+				099F2A07246D094500992925 /* ModifierEventHandlerTests.swift in Sources */,
+				090077D4245D449F0099B20A /* KeyComboTests.swift in Sources */,
+				099F29FA246CFA9500992925 /* v2_0_0KeyCombo.swift in Sources */,
+				FA3AA2162315A6A3007EAA1F /* CollectionExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -292,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -308,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -344,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -372,8 +469,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -393,8 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.clipy-app.Magnet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -406,8 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.clipy-app.MagnetTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -419,8 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.clipy-app.MagnetTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

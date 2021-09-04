@@ -16,6 +16,9 @@
 		4C5764CC1C982DC900364AFE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5764CA1C982DC900364AFE /* MainMenu.xib */; };
 		4C5764E31C982E1900364AFE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5764E21C982E1900364AFE /* Track.swift */; };
 		4C858885203F218800ED1692 /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C858884203F218800ED1692 /* Spotify.swift */; };
+		76BCAB2926E3E83D0051D26B /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 76BCAB2826E3E83D0051D26B /* Cartfile */; };
+		76BCAB2C26E3ECAE0051D26B /* Sauce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BCAB2A26E3EC8F0051D26B /* Sauce.framework */; };
+		76BCAB2D26E3ECAE0051D26B /* Sauce.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76BCAB2A26E3EC8F0051D26B /* Sauce.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB0A9A4E203EC9BA00721E3A /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A9A4D203EC9BA00721E3A /* PreferencesView.swift */; };
 		FB400A90203EFA3800F2D63C /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB400A8F203EFA3800F2D63C /* ScriptingBridge.framework */; };
 		FB6B9D0A203EC22D0062702B /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B9D09203EC22D0062702B /* UserPreferences.swift */; };
@@ -38,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				76BCAB2D26E3ECAE0051D26B /* Sauce.framework in Embed Frameworks */,
 				FBF18DE620442A7D00FAD80A /* KeyHolder.framework in Embed Frameworks */,
 				FBF18DE420442A7D00FAD80A /* Magnet.framework in Embed Frameworks */,
 				4C2FABAB204C112600354C1B /* LaunchAtLogin.framework in Embed Frameworks */,
@@ -58,6 +62,8 @@
 		4C5764CD1C982DC900364AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5764E21C982E1900364AFE /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		4C858884203F218800ED1692 /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
+		76BCAB2826E3E83D0051D26B /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		76BCAB2A26E3EC8F0051D26B /* Sauce.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sauce.framework; path = Carthage/Build/Mac/Sauce.framework; sourceTree = "<group>"; };
 		76ED7A2F23F21D7E00EB9371 /* Notify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notify.entitlements; sourceTree = "<group>"; };
 		FB0A9A4D203EC9BA00721E3A /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		FB400A8F203EFA3800F2D63C /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
@@ -77,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BCAB2C26E3ECAE0051D26B /* Sauce.framework in Frameworks */,
 				0EF142532231503600E8301D /* UserNotifications.framework in Frameworks */,
 				4C2FABAA204C112600354C1B /* LaunchAtLogin.framework in Frameworks */,
 				FBF18DE520442A7D00FAD80A /* KeyHolder.framework in Frameworks */,
@@ -91,6 +98,7 @@
 		4C5764BA1C982DC800364AFE = {
 			isa = PBXGroup;
 			children = (
+				76BCAB2826E3E83D0051D26B /* Cartfile */,
 				4C5764C51C982DC800364AFE /* SpotifyNotify */,
 				FB400A8E203EFA3800F2D63C /* Frameworks */,
 				4C5764C41C982DC800364AFE /* Products */,
@@ -152,6 +160,7 @@
 		FB400A8E203EFA3800F2D63C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76BCAB2A26E3EC8F0051D26B /* Sauce.framework */,
 				0EF142522231503600E8301D /* UserNotifications.framework */,
 				4C2FABA9204C112600354C1B /* LaunchAtLogin.framework */,
 				FBF18DE220442A7D00FAD80A /* KeyHolder.framework */,
@@ -264,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BCAB2926E3E83D0051D26B /* Cartfile in Resources */,
 				4C5764C91C982DC900364AFE /* Assets.xcassets in Resources */,
 				4C5764CC1C982DC900364AFE /* MainMenu.xib in Resources */,
 			);
@@ -284,7 +294,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh";
+			shellScript = "./Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

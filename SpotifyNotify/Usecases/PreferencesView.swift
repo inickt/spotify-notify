@@ -199,14 +199,14 @@ extension PreferencesView: RecordViewDelegate {
 	func recordView(_ recordView: RecordView, canRecordKeyCombo keyCombo: KeyCombo) -> Bool {
 		return true
 	}
-	
-	func recordViewDidClearShortcut(_ recordView: RecordView) {
-		shortcutsInteractor.unregister()
-		preferences.shortcut = nil
-	}
-	
-	func recordView(_ recordView: RecordView, didChangeKeyCombo keyCombo: KeyCombo) {
-		shortcutsInteractor.register(combo: keyCombo)
+
+	func recordView(_ recordView: RecordView, didChangeKeyCombo keyCombo: KeyCombo?) {
+		if let keyCombo = keyCombo {
+			shortcutsInteractor.register(combo: keyCombo)
+        } else {
+			shortcutsInteractor.unregister()
+        }
+
 		preferences.shortcut = keyCombo
 	}
 	

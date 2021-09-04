@@ -1,9 +1,11 @@
 //
 //  AppDelegate.swift
-//  Example
 //
-//  Created by 古林俊佑 on 2016/03/09.
-//  Copyright © 2016年 Shunsuke Furubayashi. All rights reserved.
+//  Example
+//  GitHub: https://github.com/clipy
+//  HP: https://clipy-app.com
+//
+//  Copyright © 2015-2020 Clipy Project.
 //
 
 import Cocoa
@@ -17,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // ⌘ + Control + B
-        guard let keyCombo = KeyCombo(keyCode: 11, carbonModifiers: 4352) else { return }
+        guard let keyCombo = KeyCombo(key: .b, cocoaModifiers: [.command, .control]) else { return }
         let hotKey = HotKey(identifier: "CommandControlB",
                             keyCombo: keyCombo,
                             target: self,
@@ -25,14 +27,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         hotKey.register()
 
         // Shift + Control + A
-        guard let keyCombo2 = KeyCombo(keyCode: 0, cocoaModifiers: [.shift, .control]) else { return }
+        guard let keyCombo2 = KeyCombo(key: .a, cocoaModifiers: [.shift, .control]) else { return }
         let hotKey2 = HotKey(identifier: "ShiftControlA",
                              keyCombo: keyCombo2,
                              target: self,
                              action: #selector(AppDelegate.tappedHotKey2))
         hotKey2.register()
 
-        //　⌘　Double Tap
+        // ⌘　Double Tap
         guard let keyCombo3 = KeyCombo(doubledCocoaModifiers: .command) else { return }
         let hotKey3 = HotKey(identifier: "CommandDoubleTap",
                              keyCombo: keyCombo3,
@@ -41,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         hotKey3.register()
 
         //　Shift　Double Tap
-        guard let keyCombo4 = KeyCombo(doubledCocoaModifiers: .shift) else { return }
+        guard let keyCombo4 = KeyCombo(doubledCarbonModifiers: shiftKey) else { return }
         let hotKey4 = HotKey(identifier: "ShiftDoubleTap",
                              keyCombo: keyCombo4,
                              target: self,
@@ -79,4 +81,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print("shift double tapped!!!")
     }
 }
-

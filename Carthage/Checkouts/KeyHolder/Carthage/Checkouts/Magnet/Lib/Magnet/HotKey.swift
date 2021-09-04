@@ -1,15 +1,17 @@
 //
 //  HotKey.swift
-//  Magnet
 //
-//  Created by 古林俊佑 on 2016/03/09.
-//  Copyright © 2016年 Shunsuke Furubayashi. All rights reserved.
+//  Magnet
+//  GitHub: https://github.com/clipy
+//  HP: https://clipy-app.com
+//
+//  Copyright © 2015-2020 Clipy Project.
 //
 
 import Cocoa
 import Carbon
 
-public final class HotKey: Equatable {
+public final class HotKey: NSObject {
 
     // MARK: - Properties
     public let identifier: String
@@ -41,28 +43,30 @@ public final class HotKey: Equatable {
 
     // MARK: - Initialize
     public init(identifier: String, keyCombo: KeyCombo, target: AnyObject, action: Selector, actionQueue: ActionQueue = .main) {
-        self.identifier     = identifier
-        self.keyCombo       = keyCombo
-        self.callback       = nil
-        self.target         = target
-        self.action         = action
-        self.actionQueue    = actionQueue
+        self.identifier = identifier
+        self.keyCombo = keyCombo
+        self.callback = nil
+        self.target = target
+        self.action = action
+        self.actionQueue = actionQueue
+        super.init()
     }
 
     public init(identifier: String, keyCombo: KeyCombo, actionQueue: ActionQueue = .main, handler: @escaping ((HotKey) -> Void)) {
-        self.identifier     = identifier
-        self.keyCombo       = keyCombo
-        self.callback       = handler
-        self.target         = nil
-        self.action         = nil
-        self.actionQueue    = actionQueue
+        self.identifier = identifier
+        self.keyCombo = keyCombo
+        self.callback = handler
+        self.target = nil
+        self.action = nil
+        self.actionQueue = actionQueue
+        super.init()
     }
-    
+
 }
 
 // MARK: - Invoke
 public extension HotKey {
-    public func invoke() {
+    func invoke() {
         guard let callback = self.callback else {
             guard let target = self.target as? NSObject, let selector = self.action else { return }
             guard target.responds(to: selector) else { return }
@@ -82,19 +86,23 @@ public extension HotKey {
 // MARK: - Register & UnRegister
 public extension HotKey {
     @discardableResult
-    public func register() -> Bool {
+    func register() -> Bool {
         return HotKeyCenter.shared.register(with: self)
     }
 
-    public func unregister() {
+    func unregister() {
         return HotKeyCenter.shared.unregister(with: self)
     }
 }
 
-// MARK: - Equatable
-public func == (lhs: HotKey, rhs: HotKey) -> Bool {
-    return lhs.identifier == rhs.identifier &&
-            lhs.keyCombo == rhs.keyCombo &&
-            lhs.hotKeyId == rhs.hotKeyId &&
-            lhs.hotKeyRef == rhs.hotKeyRef
+// MARK: - override isEqual
+public extension HotKey {
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let hotKey = object as? HotKey else { return false }
+
+        return self.identifier == hotKey.identifier &&
+               self.keyCombo == hotKey.keyCombo &&
+               self.hotKeyId == hotKey.hotKeyId &&
+               self.hotKeyRef == hotKey.hotKeyRef
+    }
 }
