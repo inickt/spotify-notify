@@ -231,7 +231,7 @@
 					4C5764C21C982DC800364AFE = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = HKXMUS7LVK;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
