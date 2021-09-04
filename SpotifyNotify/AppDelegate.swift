@@ -34,9 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	fileprivate let notificationsInteractor = NotificationsInteractor()
 	fileprivate let shortcutsInteractor = ShortcutsInteractor()
 	fileprivate let spotifyInteractor = SpotifyInteractor()
-	
 	var statusBar: NSStatusItem!
-	
+
     /// Used to avoid opening the preferences when a notification is clicked
     private var shouldIgnoreNextReopen = false
 
@@ -58,7 +57,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 // MARK: setup functions
 
 extension AppDelegate {
-	fileprivate func setup(){
+	fileprivate func setup() {
 		setupObservers()
 		setupMenuBarIcon()
 		setupStartup()
@@ -84,11 +83,10 @@ extension AppDelegate {
 		center.addObserver(self, selector: #selector(setupMenuBarIcon),
 						   name: .userPreferencesDidChangeIcon, object: nil)
 		
-		
 		NSUserNotificationCenter.default.delegate = self
 	}
 	
-	@objc private func setupMenuBarIcon(){
+	@objc private func setupMenuBarIcon() {
 		switch preferences.menuIcon {
 		case .default:
 			statusBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -107,11 +105,11 @@ extension AppDelegate {
 		}
 	}
 	
-	@objc private func setupStartup(){
+	@objc private func setupStartup() {
         LaunchAtLogin.isEnabled = preferences.startOnLogin
 	}
 	
-	private func setupTargets(){
+	private func setupTargets() {
 		statusPrevious.action = #selector(previousSong)
 		statusPlay.action = #selector(playPause)
 		statusNext.action = #selector(nextSong)
@@ -120,20 +118,20 @@ extension AppDelegate {
 	}
     
     private func setupFirstRun() {
-        if !preferences.isNotFirstRun {
-            preferences.isNotFirstRun = true
-            preferences.notificationsEnabled = true
-            preferences.notificationsPlayPause = true
-            preferences.notificationsSound = false
-            preferences.notificationsDisableOnFocus = true
-            preferences.notificationsLength = 5
-            preferences.startOnLogin = false
-            preferences.showAlbumArt = true
-            preferences.roundAlbumArt = false
-            preferences.showSpotifyIcon = true
-            preferences.showSongProgress = false
-            preferences.menuIcon = .default
-        }
+        guard !preferences.isNotFirstRun else { return }
+
+        preferences.isNotFirstRun = true
+        preferences.notificationsEnabled = true
+        preferences.notificationsPlayPause = true
+        preferences.notificationsSound = false
+        preferences.notificationsDisableOnFocus = true
+        preferences.notificationsLength = 5
+        preferences.startOnLogin = false
+        preferences.showAlbumArt = true
+        preferences.roundAlbumArt = false
+        preferences.showSpotifyIcon = true
+        preferences.showSongProgress = false
+        preferences.menuIcon = .default
     }
 	
 	fileprivate func setupShortcuts() {
@@ -182,7 +180,7 @@ extension AppDelegate {
 		spotifyInteractor.nextTrack()
 	}
 	
-	@objc fileprivate func showPreferences(){
+	@objc fileprivate func showPreferences() {
 		NSApp.activate(ignoringOtherApps: true)
 		preferencesWindow.makeKeyAndOrderFront(nil)
 	}
@@ -241,7 +239,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        // Force notifications to be shown, even if the SpotifyNotify is in the foreground
+        // Force notifications to be shown, even if SpotifyNotify is in the foreground
         completionHandler([.alert, .sound])
     }
 

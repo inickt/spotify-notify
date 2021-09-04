@@ -138,14 +138,14 @@ final class NotificationsInteractor {
         }
 
         if viewModel.shouldShowArtwork {
-            addArtwork(to: notification, using: viewModel)
+            addArtworkAndDeliver(to: notification, using: viewModel)
         } else {
             deliverModernNotification(identifier: viewModel.identifier, content: notification)
         }
     }
 
     @available(OSX 10.14, *)
-    private func addArtwork(to notification: UNMutableNotificationContent, using viewModel: NotificationViewModel) {
+    private func addArtworkAndDeliver(to notification: UNMutableNotificationContent, using viewModel: NotificationViewModel) {
         guard viewModel.shouldShowArtwork else { return }
 
         viewModel.artworkURL?.asyncImage { art in

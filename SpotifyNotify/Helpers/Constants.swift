@@ -12,7 +12,7 @@ struct SpotifyConstants {
 	static let applicationName = "Spotify"
 	static let bundleIdentifier = "com.spotify.client"
 	
-	static let notificationPlaybackChange = bundleIdentifier + ".PlaybackStateChanged"
+	static let notificationPlaybackChange = "\(bundleIdentifier).PlaybackStateChanged"
 	static let albumArtURL = "https://embed.spotify.com/oembed/?url="
 }
 
