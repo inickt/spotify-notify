@@ -20,6 +20,9 @@ final class NotificationsInteractor {
 	private var previousTrack: Track?
 	private var currentTrack: Track?
 
+	// To avoid removing newer notifications early
+	private var currentNotification: UInt = 0
+	
     func showNotification(force: Bool = false) {
         previousTrack = currentTrack
         currentTrack  = spotifyInteractor.currentTrack
@@ -118,8 +121,12 @@ final class NotificationsInteractor {
         // Deliver current notification
         notificationCenter.add(request)
 
+		currentNotification += 1
+		let notificationId = currentNotification
+
         // remove after userset number of seconds if not taken action
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(preferences.notificationsLength)) {
+			guard notificationId == self.currentNotification else { return }
             notificationCenter.removeAllDeliveredNotifications()
         }
     }
