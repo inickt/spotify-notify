@@ -40,7 +40,7 @@ struct NotificationViewModel {
             body = track.album ?? NotificationViewModel.unknownAlbum
         }
 
-        shouldShowArtwork = SystemPreferences.isContentImagePropertyAvailable && preferences.showAlbumArt
+        shouldShowArtwork = preferences.showAlbumArt
         artworkURL = track.artworkURL
         needsNotificationSound = preferences.notificationsSound
     }

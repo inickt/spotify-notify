@@ -51,17 +51,9 @@ final class PreferencesView: NSVisualEffectView {
 	
 	override func viewWillDraw() {
 		super.viewWillDraw()
-		checkAvailability()
 		setup()
         checkCompability()
 		setupTargets()
-	}
-	
-	private func checkAvailability() {
-		if !SystemPreferences.isContentImagePropertyAvailable {
-			showAlbumArtCheck.isEnabled = false
-			roundAlbumArtCheck.isEnabled = false
-		}
 	}
     
     private func checkCompability() {
