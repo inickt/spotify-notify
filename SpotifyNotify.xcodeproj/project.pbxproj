@@ -209,7 +209,6 @@
 				TargetAttributes = {
 					4C5764C21C982DC800364AFE = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = HKXMUS7LVK;
 						LastSwiftMigration = 1130;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -424,7 +423,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HKXMUS7LVK;
+				DEVELOPMENT_TEAM = 8SQNZE245D;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SpotifyNotify/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,7 +448,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HKXMUS7LVK;
+				DEVELOPMENT_TEAM = 8SQNZE245D;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SpotifyNotify/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
